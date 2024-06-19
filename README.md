@@ -18,6 +18,7 @@ A way for the people to constitutionally express a vote of no confidence in thei
 - Powered by IEBC and IPRS APIs for verification.
 - Node Backend APIs to be availed soon [here](https://github.com/Friendsofthepeople/recall-server)
 - An alternative APIs server in Django Rest will be running [here](https://github.com/Friendsofthepeople/django-recall-server) - Just in case*
+- The mobile android mobile application and ios applications repo **
 
 ### Join the Community
 - [Discord server](https://discord.gg/v6TYzfuZc8)
