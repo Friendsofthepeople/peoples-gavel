@@ -16,7 +16,7 @@ A way for the people to constitutionally express a vote of no confidence in thei
 ### Stack
 - PWA in ReactJS
 - Powered by IEBC and IPRS APIs for verification.
-- Backend APIs to be availed soon [here](https://github.com/Friendsofthepeople/recall-server)
+- Node Backend APIs to be availed soon [here](https://github.com/Friendsofthepeople/recall-server)
 - An alternative APIs server in Django Rest will be running [here]() - Just in case*
 
 Happy hacking with you!!
