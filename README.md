@@ -20,7 +20,7 @@ A way for the people to constitutionally express a vote of no confidence in thei
 - An alternative APIs server in Django Rest will be running [here](https://github.com/Friendsofthepeople/django-recall-server) - Just in case*
 
 ### Join the Community
-- [Discord server](https://discord.gg/ZyCfgAQ6)
+- [Discord server](https://discord.gg/v6TYzfuZc8)
 - [Twitter]()
 
 Happy hacking with you!!
