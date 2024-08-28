@@ -1,21 +1,56 @@
+"use client"
+
 import Image from 'next/image'
+import React, { useState } from 'react'
+import { TiThMenu } from "react-icons/ti";
+import { IoClose } from "react-icons/io5";
 
 const Navbar = () => {
+    const [menuOpen, setMenuOpen] = useState<boolean>(false)
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen)
+    }
+
     return (
-        <main className="sticky top-0 z-1 py-4 px-28 bg-white">
-            <nav className="flex justify-between items-center w-full">
-                <a href='/'>
-                    <Image height={100} width={100} alt='logo' src={'/logo/logo-full-v.svg'} />
-                </a>
-                <ul className="flex justify-center items-center gap-4">
+        <main className="sticky top-0 z-10 py-4 md:py-8 lg:py-4 px-4 md:px-8 lg:px-28 bg-white">
+            <nav className="flex flex-col lg:flex-row justify-between items-center w-full gap-4">
+                <div className='flex justify-between items-center gap-4 w-full  lg:block lg:w-auto' >
+                    <a href='/'>
+                        <Image height={100} width={100} alt='logo' src={'/logo/logo-full-v.svg'} />
+                    </a>
+                    {
+                        menuOpen ? (
+                            <IoClose onClick={toggleMenu} size={23} className='block lg:hidden border-2 border-[#01C909] rounded text-[#01C909] text-3xl cursor-pointer' />
+                        ) :
+                            (
+                                <TiThMenu onClick={toggleMenu} size={23} className='block lg:hidden border-2 border-[#01C909] rounded text-[#01C909] text-3xl cursor-pointer' />)
+                    }
+                </div>
+
+                <ul className="hidden lg:flex flex-col lg:flex-row  justify-center items-center gap-4">
                     <li>Home</li>
                     <li>About</li>
                     <li>How it works</li>
                 </ul>
-                <div className="flex justify-center items-center gap-4">
-                    <button className='border-2 border-[#01C909] rounded py-1 px-4' >Sign up</button>
-                    <button className='border-2 border-[#01C909] bg-[#01C909] py-1 px-4 text-white rounded'>Login</button>
+                <div className="hidden lg:flex flex-col lg:flex-row justify-center items-center gap-4">
+                    <button className='border-2 border-[#01C909] rounded-xl py-1 px-4' >Sign up</button>
+                    <button className='border-2 border-[#01C909] bg-[#01C909] py-1 px-4 text-white rounded-xl'>Login</button>
                 </div>
+
+                {/* for small screen */}
+                <div className={`lg:hidden ${menuOpen ? 'block' : 'hidden'}`}>
+                    <ul className="flex flex-col lg:flex-row  justify-center items-center gap-4">
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>How it works</li>
+                    </ul>
+                    <div className="flex flex-col lg:flex-row justify-center items-center gap-4 mt-4">
+                        <button className='border-2 border-[#01C909] rounded-xl py-1 px-4' >Sign up</button>
+                        <button className='border-2 border-[#01C909] bg-[#01C909] py-1 px-4 text-white rounded-xl'>Login</button>
+                    </div>
+                </div>
+
             </nav>
         </main>
     )
