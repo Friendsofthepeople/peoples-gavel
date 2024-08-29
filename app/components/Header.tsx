@@ -15,13 +15,13 @@ function Header() {
         </p>
 
         <div className="flex justify-center items-center gap-4 w-full mt-2">
-          <button className='border-2 border-[#01C909] rounded-xl py-1 px-4 w-[25%]  text-center' >Sign up</button>
+          <button className='border-2 border-[#01C909] rounded-xl py-1 px-2 w-[25%]  text-center'>Sign up</button>
           <button className='border-2 border-[#01C909] bg-[#01C909] py-1 px-4 w-[25%]  text-center text-white rounded-xl'>Login</button>
         </div>
 
       </div>
 
-      <div className='relative w-full min-h-[450px] lg:mt-4'>
+      <div className='relative w-full min-h-[450px] mt-0 lg:mt-4'>
         <Image
           src={"/assets/images/presentation.svg"}
           alt="presentation"
