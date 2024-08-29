@@ -40,7 +40,7 @@ function HowItWorks() {
                     </div>
                     <div>
                         <p className='font-semibold py-2'>2: Participate</p>
-                        <p>On your dashboard, {'"'}Sign Up{'"'}  You{"'"}ll find a list of bills currently being debated in the parliament, Senate and your County Assembly Each bill has a clear, easy-to-understand summary, so you can quickly get up to speed on what{"'"}s at stake</p>
+                        <p>On your dashboard, You{"'"}ll find a list of bills currently being debated in the Parliament, Senate or your County Assembly. Each bill has a clear, easy-to-understand summary, so you can quickly get up to speed on what{"'"}s at stake</p>
                     </div>
                 </div>
 
