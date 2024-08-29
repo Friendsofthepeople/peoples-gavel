@@ -21,7 +21,7 @@ function Header() {
 
       </div>
 
-      <div className='relative w-full min-h-[200px] md:min-h-[400px] lg:min-h-[450px] mt-4 lg:mt-4'>
+      <div className='relative w-full min-h-[200px] md:min-h-[400px] lg:min-h-[600px] mt-4 lg:mt-4'>
         <Image
           src={"/assets/images/presentation.svg"}
           alt="presentation"
