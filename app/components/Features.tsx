@@ -21,7 +21,8 @@ function Features() {
                     </div>
                     <div>
                         <p className='font-semibold py-2'>Easy voting on laws</p>
-                        <p>Hit the {'"'}Sign Up{'"'} button on our home page. You{"'"}ll be prompted to create an account using your voter{"'"} ID and email. Don{"'"}t worry, we{"'"}ve got your back with top-notch security to keep your information safe</p>
+                        <p>No more long queues or confusing ballots. Bonga allows you to cast your vote on important bills right from your dashboard. Just click, vote, and you{"’"}re done!</p>
+                   <p> We{"’"}ve designed the voting system to be intuitive and straightforward. Each bill comes with a summary, so you know exactly what you{"’"}re voting on.</p>
                     </div>
                 </div>
 
@@ -40,7 +41,8 @@ function Features() {
                     </div>
                     <div>
                         <p className='font-semibold py-2'>Real time feedback</p>
-                        <p>On your dashboard, You{"'"}ll find a list of bills currently being debated in the Parliament, Senate or your County Assembly. Each bill has a clear, easy-to-understand summary, so you can quickly get up to speed on what{"'"}s at stake</p>
+                        <p>After casting your vote, share your thoughts on the bill with our real-time feedback feature. Your opinion matters, and we make sure it gets heard instantly</p>
+                        <p>Read and respond to comments from other users. Engage in healthy discussions and see diverse perspectives on the issues that matter to you.</p>
                     </div>
                 </div>
 
@@ -59,8 +61,69 @@ function Features() {
                     </div>
                     <div>
                         <p className='font-semibold py-2'>Compare votes</p>
-                        <p>Visit the {'"'}Legislative Trends{'"'} section to see how Your vote compare to those of other users and representatives.
-                            We provide real-time data on hoe people are voting and the trends for each bill. You can also compare by region</p>
+                        <p>Curious about how your representatives are voting? Bonga provides a detailed comparison between your vote and those of elected officials. This transparency helps you stay informed and hold them accountable.</p>
+                        <p>Visualize voting patterns with our easy-to-read charts. See how your votes align with your representatives and understand where they stand on key issues.</p>
+                    </div>
+                </div>
+
+
+                <div className='m-2 p-2 border border-2 rounded-2xl'>
+                    <div className='relative w-full min-h-[200px] mt-4 lg:mt-4'>
+                        <Image
+                            className='rounded-2xl'
+                            src={"/assets/images/jon-tyson-xurNTAct1f4-unsplash.jpg"}
+                            alt="presentation"
+                            layout="fill"
+                            objectFit="cover"
+                            placeholder='blur'
+                            blurDataURL={"/assets/placeholders/presentation.svg"}
+                            priority={true}
+                        />
+                    </div>
+                    <div>
+                        <p className='font-semibold py-2'>Transparency in decision making</p>
+                        <p>We believe in transparency at every step. Bonga provides open access to all voting records and feedback. You can see how decisions are made and who is making them.</p>
+                   <p>Explore detailed records of all bills, including their progress and outcomes. Stay updated with the latest changes and understand how each decision impacts you</p>
+                    </div>
+                </div>
+
+                <div className='m-2 p-2 border border-2 rounded-2xl'>
+                    <div className='relative w-full min-h-[200px] mt-4 lg:mt-4'>
+                        <Image
+                            className='rounded-2xl'
+                            src={"/assets/images/rivage-EgwhIBec0Ck-unsplash.jpg"}
+                            alt="presentation"
+                            layout="fill"
+                            objectFit="cover"
+                            placeholder='blur'
+                            blurDataURL={"/assets/placeholders/presentation.svg"}
+                            priority={true}
+                        />
+                    </div>
+                    <div>
+                        <p className='font-semibold py-2'>Regional participation</p>
+                        <p>Bonga allows you to see how people in your region are voting on issues that affect your community. Understand the local trends and get involved in discussions that matter to your area.</p>
+                        <p>View detailed statistics on participation by region. See how your community is engaging with different issues and where your efforts can make the most impact.</p>
+                    </div>
+                </div>
+
+                <div className='m-2 p-2 border border-2 rounded-2xl'>
+                    <div className='relative w-full min-h-[200px] mt-4 lg:mt-4'>
+                        <Image
+                            className='rounded-2xl'
+                            src={"/assets/images/austin-distel-uLnmmE8Y0E4-unsplash.jpg"}
+                            alt="presentation"
+                            layout="fill"
+                            objectFit="cover"
+                            placeholder='blur'
+                            blurDataURL={"/assets/placeholders/presentation.svg"}
+                            priority={true}
+                        />
+                    </div>
+                    <div>
+                        <p className='font-semibold py-2'>Dynamic discussions</p>
+                        <p>Dive into lively discussions on the issues you care about. Our platform provides a space for open, respectful dialogue where everyone{"’"}s voice can be heard. Engage with fellow citizens, share your thoughts, and learn from different perspectives.</p>
+                        <p>Explore various discussion forums categorized by topics such as Education, Healthcare, Environment, and more. Find the topics that interest you and join the conversation.</p>
                     </div>
                 </div>
             </div>
