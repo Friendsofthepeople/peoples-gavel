@@ -4,10 +4,8 @@ import Image from 'next/image'
 function WhatIsBonga() {
     return (
         <>
-
             <main className='mt-4 items-center text-white bg-[#01C909] p-4 '>
-
-                <div className='hidden md:grid md:grid-cols-2 md:px-6 lg:px-28 gap-4 items-center'>
+                <div className='hidden lg:grid lg:grid-cols-2 lg:px-6 lg:px-28 gap-4 items-center'>
                     <div>
                         <div className="py-4 mb-4 " >
                             <p className='text-[12px]'>Speak up, shape your future</p>
@@ -33,8 +31,8 @@ function WhatIsBonga() {
                 </div>
 
                 {/* for small screens */}
-                <div className='grid grid-cols-1 md:grid-cols-3 md:px-6 lg:px-28 gap-4 items-center lg:hidden'>
-                    <div className='relative w-full min-h-[200px] mt-4 lg:mt-4'>
+                <div className='grid grid-cols-1 grid-cols-1 px-6 gap-4 items-center lg:hidden'>
+                    <div className='relative w-full min-h-[200px] mt-4'>
                         <Image
                             className='rounded-2xl'
                             src={"/assets/images/ian-macharia-gogGhbvHrYw-unsplash.jpg"}

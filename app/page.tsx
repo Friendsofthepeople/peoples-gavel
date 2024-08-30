@@ -4,6 +4,7 @@ import HowItWorks from "./components/HowItWorks";
 import Features from './components/Features';
 import WhatIsBonga from './components/WhatIsBonga';
 import WhyBonga from './components/WhyBonga'
+import Aob from './components/Aob'
 import Footer from './components/Footer'
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
      <Features />
      <WhatIsBonga />
      <WhyBonga />
+     <Aob />
      <Footer />
     </main>
   );
