@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import HowItWorks from "./components/HowItWorks";
 import Features from './components/Features';
 import WhatIsBonga from './components/WhatIsBonga';
+import WhyBonga from './components/WhyBonga'
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
      <HowItWorks />
      <Features />
      <WhatIsBonga />
+     <WhyBonga />
     </main>
   );
 }
