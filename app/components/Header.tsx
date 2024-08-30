@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link'
 
 function Header() {
   return (
@@ -15,10 +16,14 @@ function Header() {
         </p>
 
         <div className="flex justify-center items-center gap-4 w-full mt-2">
-          <button className='border-2 border-[#01C909] rounded-xl py-1 px-2 w-[25%]  text-center'>Sign up</button>
-          <button className='border-2 border-[#01C909] bg-[#01C909] py-1 px-4 w-[25%]  text-center text-white rounded-xl'>Login</button>
-        </div>
 
+          <button className='border-2 border-[#01C909] rounded-xl py-1 px-2 w-[25%]  text-center'>
+            <Link href="/auth/signup">Sign up</Link>
+          </button>
+          <button className='border-2 border-[#01C909] bg-[#01C909] py-1 px-4 w-[25%]  text-center text-white rounded-xl'>
+            <Link href="/auth/login">Login</Link>
+          </button>
+        </div>
       </div>
 
       <div className='relative w-full min-h-[200px] md:min-h-[400px] lg:min-h-[600px] mt-4 lg:mt-4'>
