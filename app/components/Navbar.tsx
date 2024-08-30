@@ -36,11 +36,11 @@ const Navbar = () => {
                     <li>How it works</li>
                 </ul>
                 <div className="hidden lg:flex flex-col lg:flex-row justify-center items-center gap-4">
-                        <Link href="/auth/signup">
-                    <button className='border-2 border-[#01C909] rounded-xl py-1 px-4' >
-                        Sign up
-                    </button>
-                        </Link>
+                    <Link href="/auth/signup">
+                        <button className='border-2 border-[#01C909] rounded-xl py-1 px-4' >
+                            Sign up
+                        </button>
+                    </Link>
                     <button className='border-2 border-[#01C909] bg-[#01C909] py-1 px-4 text-white rounded-xl'>Login</button>
                 </div>
 
@@ -52,12 +52,12 @@ const Navbar = () => {
                         <li>How it works</li>
                     </ul>
                     <div className="flex flex-col lg:flex-row justify-center items-center gap-4 mt-4">
-                            <Link href="/auth/signup">
-                        <button className='border-2 border-[#01C909] rounded-xl py-1 px-4' >
-                            Sign up
-                        </button>
-                            </Link>
-                        <button className='border-2 border-[#01C909] bg-[#01C909] py-1 px-4 text-white rounded-xl'>Login</button>
+                        <Link href="/auth/signup">
+                            <button className='border-2 border-[#01C909] rounded-xl py-1 px-4' >Sign up</button>
+                        </Link>
+                        <Link href="/auth/login">
+                            <button className='border-2 border-[#01C909] bg-[#01C909] py-1 px-4 text-white rounded-xl'>Login</button>
+                        </Link>
                     </div>
                 </div>
 
