@@ -6,7 +6,7 @@ function WhyBonga() {
         <main className='mt-4 items-center'>
            <div className='hidden lg:block'>
             <p className='mt-4 text-center font-semibold'>Why Bonga?</p>
-            <p className='text-center p-2  '>In a world where it often feels like your voice doesn{"’"}t 
+            <p className='text-center p-2'>In a world where it often feels like your voice doesn{"’"}t 
             <br></br>
             matter, Bonga changes the game. We believe that <br></br> everyone has a right to participate in the decision-making <br></br> process that shapes their community and country. <br></br> Here{"’"}s how Bonga can help you:</p>
            </div>

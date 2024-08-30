@@ -9,11 +9,11 @@ function WhatIsBonga() {
 
                 <div className='hidden md:grid md:grid-cols-2 md:px-6 lg:px-28 gap-4 items-center'>
                     <div>
-                    <div className="py-4 mb-4 " >
-                        <p className='text-[12px]'>Speak up, shape your future</p>
-                    <p className='text-white text-2xl'>What Is Bonga?</p>
-                    </div>
-                        <p>Bonga is a unique and exciting platform designed to empower you to speak up and make a real impact on the issues that matter most to you. The name "Bonga" comes from the Swahili word meaning "speak up," and that's exactly what we want you to do here!</p>
+                        <div className="py-4 mb-4 " >
+                            <p className='text-[12px]'>Speak up, shape your future</p>
+                            <p className='text-white text-2xl'>What Is Bonga?</p>
+                        </div>
+                        <p>Bonga is a unique and exciting platform designed to empower you to speak up and make a real impact on the issues that matter most to you. The name {'"'}Bonga{'"'} comes from the Swahili word meaning {'"'}speak up,{'"'} and that{"'"}s exactly what we want you to do here!</p>
                         <p>Whether it{"’"}s about new laws being debated, how public funds are being used, or any other issue affecting your community, Bonga gives you the tools to have your voice heard and make a difference.</p>
                         <button className='border-2 border-[#01C909] text-[#01C909] bg-white rounded-xl py-2 px-4 my-2' >Get Started now</button>
                     </div>
@@ -50,9 +50,8 @@ function WhatIsBonga() {
                         <p className='text-[12px]'>Speak up, shape your future</p>
                         <p className='font-semibold'>What Is Bonga?</p>
                     </div>
-
                     <div>
-                        <p>Bonga is a unique and exciting platform designed to empower you to speak up and make a real impact on the issues that matter most to you. The name "Bonga" comes from the Swahili word meaning "speak up," and that's exactly what we want you to do here!</p>
+                        <p>Bonga is a unique and exciting platform designed to empower you to speak up and make a real impact on the issues that matter most to you. The name {'"'}Bonga{'"'} comes from the Swahili word meaning {'"'}speak up,{'"'} and that{"'"}s exactly what we want you to do here!</p>
                         <br></br>
                         <p>Whether it{"’"}s about new laws being debated, how public funds are being used, or any other issue affecting your community, Bonga gives you the tools to have your voice heard and make a difference.</p>
                     </div>
