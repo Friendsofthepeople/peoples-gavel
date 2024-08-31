@@ -20,11 +20,10 @@ export default function DashboardLayout({
     <html lang="en">
       <body className={inter.className}>
         <TopNavBar />
-        <div className='flex items-start'>
-          <div className="sticky top-[70px]">
+        <div className='lg:flex lg:items-start'>
+          <div className="sticky top-0">
             <SideBar />
           </div>
-
           <div className='flex-end w-full'>
             {children}
           </div>
