@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 function page() {
   return (
-    <main className='p-6 lg:p-0 grid grid-col-1 md:grid-cols-2 items-center max-h-screen lg:h-screen'>
+    <main className='px-6 lg:p-0 grid grid-col-1 md:grid-cols-2 items-center max-h-screen lg:h-screen'>
       <div className='relative w-full h-[350px] md:min-h-[70%] lg:min-h-[100%] lg:mt-4'>
         <Image
           src={"/assets/images/gustav-schwiering-sWk_wiHCCf4-unsplash.jpg"}

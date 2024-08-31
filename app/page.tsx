@@ -6,9 +6,12 @@ import WhatIsBonga from './components/WhatIsBonga';
 import WhyBonga from './components/WhyBonga'
 import Aob from './components/Aob'
 import Footer from './components/Footer'
+import Navbar from "./components/Navbar";
 
 export default function Home() {
   return (
+    <>
+    <Navbar />
     <main className="flex min-h-screen flex-col items-center">
      <Header />
      <HowItWorks />
@@ -18,5 +21,6 @@ export default function Home() {
      <Aob />
      <Footer />
     </main>
+    </>
   );
 }
