@@ -44,11 +44,10 @@ function SideBar() {
   return (
 
     <aside className={`h-screen flex flex-col 
-       w-full lg:w-[200px] transition-all duration-300 ease-in-out m-0 left-0
+       w-full lg:w-[200px] transition-all duration-300 ease-in-out m-0 left-0 pt-8 lg:pt-12
        ${expanded ? 'px-4' : 'px-2 w-[90px] lg:w-[70px]'} 
        bg-[#f8f9fb]`}>
-
-      <div className="pt-4 px-4">
+      <div className="pt-8 px-4">
         <button onClick={toggleExpand} className="hover:bg-gray-100 border-2 border-[#01C909] rounded bg-white cursor-pointer hover:border-[#01C909]">
           {expanded ? <MdKeyboardArrowLeft color='#01C909' size={20} /> : <MdKeyboardArrowRight color='#01C909' size={20} />}
         </button>
