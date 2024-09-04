@@ -83,7 +83,7 @@ function Page() {
         <div className='flex flex-col my-4'>
           <label>Password</label>
           <input
-          type="text"
+          type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           className="py-2 px-2  rounded-xl"
@@ -93,7 +93,7 @@ function Page() {
 
           <label>Re Enter Password</label>
           <input
-          type="text"
+          type="password"
           value={rePassword}
           onChange={(e) => setRePassword(e.target.value)}
           className="py-2 px-2  rounded-xl"
