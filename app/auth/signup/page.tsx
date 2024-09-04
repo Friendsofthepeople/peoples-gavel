@@ -1,8 +1,11 @@
-import React from 'react'
+"use client"
+
+import React, {useState, useEffect} from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
 function page() {
+
   return (
     <main className='px-6 lg:p-0 grid grid-col-1 md:grid-cols-2 items-center max-h-screen lg:h-screen'>
       <div className='relative w-full h-[350px] md:min-h-[70%] lg:min-h-[100%] lg:mt-4'>

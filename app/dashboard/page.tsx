@@ -1,4 +1,6 @@
-import React from 'react'
+"use client"
+
+import React, {useEffect} from 'react'
 import Link from 'next/link'
 import { TbLayoutDashboard } from "react-icons/tb";
 import { TbGavel } from "react-icons/tb";
@@ -7,7 +9,32 @@ import { MdOutlineChat } from "react-icons/md";
 import { MdOutlineCalendarMonth } from "react-icons/md";
 import { FaRegCircleUser } from "react-icons/fa6";
 
-function page() {
+interface userResponse {
+  data: {
+    id_number: string;
+    email: string;
+    id: number;
+}
+}
+
+function Page() {
+  // const [user, setUser] = useState([]);
+  // const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await fetch('/api/profile');
+        const data: userResponse = await response.json();
+        console.log(data);
+      } catch (err) {
+        console.log('Failed to fetch Posts');
+      }
+    };
+    fetchUser();
+  }, []);
+
+
   return (
     <div className='pt-[60px] lg:pt-[75px] px-2'>
       <div className='hidden lg:flex items-center gap-2 pt-4'>
@@ -184,4 +211,4 @@ function page() {
   )
 }
 
-export default page
+export default Page
