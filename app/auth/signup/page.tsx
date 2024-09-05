@@ -7,10 +7,8 @@ import Link from 'next/link'
 import {userData} from "../../types";
 
 function Page() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [rePassword, setRePassword] = useState('');
-  const [idNumber, setIdNumber] = useState('');
+  const [email, setEmail] = useState('');  const [password, setPassword] = useState('');
+  const [id, setId] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   
@@ -24,10 +22,12 @@ function Page() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ idNumber, email, password, rePassword }),
+      body: JSON.stringify({ id, email, password }),
     });
 
     const data = await res.json();
+    console.log("data from signup", data)
+    console.log("----: ", id, email, password)
 
     if (res.ok) {
       setSuccess('Signup successful!');
@@ -70,15 +70,26 @@ function Page() {
             className="py-2 px-2  rounded-xl"
             placeholder='Enter username'></input>
         </div>
+
         <div className='flex flex-col my-4'>
+          <label>Identification card number</label>
+          <input id="id"
+            type="text"
+            value={id}
+            onChange={(e) => setId(e.target.value)}
+            className="py-2 px-2  rounded-xl"
+            placeholder='Enter your 8 digit ID number'></input>
+        </div>
+
+        {/* <div className='flex flex-col my-4'>
           <label>Identification card number</label>
           <input
           type="text"
           value={idNumber}
           onChange={(e) => setIdNumber(e.target.value)}
-          className="py-2  px-2 rounded-xl"
+          className="py-2 px-2 rounded-xl"
           placeholder='Enter your 8 digit ID number'></input>
-        </div>
+        </div> */}
 
         <div className='flex flex-col my-4'>
           <label>Password</label>
@@ -88,17 +99,10 @@ function Page() {
           onChange={(e) => setPassword(e.target.value)}
           className="py-2 px-2  rounded-xl"
           placeholder='use a combination of letter, digits and symbols'></input>
+        
         </div>
-        <div className='hidden flex flex-col my-4'>
 
-          <label>Re Enter Password</label>
-          <input
-          type="password"
-          value={rePassword}
-          onChange={(e) => setRePassword(e.target.value)}
-          className="py-2 px-2  rounded-xl"
-          placeholder='use a combination of letter, digits and symbols'></input>
-        </div>
+
         <div >
           <input type="submit" className='border-2 border-[#01C909] text-[#ffffff] bg-[#01C909] rounded-xl py-2 px-4 my-2 w-full cursor-pointer' value="Get Started now"></input>
         </div>
