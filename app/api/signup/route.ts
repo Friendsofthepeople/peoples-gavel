@@ -33,12 +33,7 @@ export async function POST(req: any) {
       const error = await response.json();
  
       return NextResponse.json({
-        message: "Some error occurred!!!",
         error,
-        id,
-        email,
-        password,
-        re_password: password,
       }, {
         status: response.status,
       });

@@ -27,7 +27,6 @@ function Page() {
 
     const data = await res.json();
     console.log("data from signup", data)
-    console.log("----: ", id, email, password)
 
     if (res.ok) {
       setSuccess('Signup successful!');
