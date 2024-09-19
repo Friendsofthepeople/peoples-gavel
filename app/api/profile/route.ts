@@ -16,13 +16,15 @@ export async function GET(): Promise<void | Response> {
         }
     )
 
-    if (response){
+    if (response.ok){
       const res = await response.json()
       return NextResponse.json({
         data: res
       });
     }else{
+      const error = await response.json()
       return NextResponse.json({
+        error,
         message: "Some error occured!!!",
       });
     }
