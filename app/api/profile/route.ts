@@ -5,7 +5,7 @@ const base_url = process.env.BASE_URL;
 
 const endpoint = `${base_url}/auth/users/me`;
 
-export async function GET() {
+export async function GET(): Promise<void | Response> { 
   try{
     const response = await fetch(
         endpoint,
@@ -26,8 +26,9 @@ export async function GET() {
         message: "Some error occured!!!",
       });
     }
-  }catch(error){
-    return error;
+  }catch (error) {
+    return NextResponse.json({ message: "An error occurred" }); 
   }
+
 
 }

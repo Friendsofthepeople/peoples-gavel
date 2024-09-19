@@ -1,6 +1,4 @@
 import { NextResponse } from "next/server";
-import type { NextApiRequest } from 'next'
-import {userData} from "../../types";
 const base_url = process.env.BASE_URL;
 
 export async function POST(req: any) {
