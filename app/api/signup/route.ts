@@ -16,7 +16,7 @@ export async function POST(req: any) {
       },
       
       body: JSON.stringify({
-        id,
+        id_number: id,
         email,
         password,
         re_password: password
@@ -34,6 +34,9 @@ export async function POST(req: any) {
  
       return NextResponse.json({
         error,
+        id,
+        email,
+        password,
       }, {
         status: response.status,
       });

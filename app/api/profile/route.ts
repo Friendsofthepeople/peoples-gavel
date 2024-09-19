@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
 
 const token = ""
+const base_url = process.env.BASE_URL;
 
-const endpoint = `http://www.recallserver.co:8000/auth/users/me`;
+const endpoint = `${base_url}/auth/users/me`;
 
 export async function GET() {
   try{

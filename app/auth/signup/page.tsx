@@ -67,7 +67,7 @@ function Page() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="py-2 px-2  rounded-xl"
-            placeholder='Enter username'></input>
+            placeholder='Enter your email'></input>
         </div>
 
         <div className='flex flex-col my-4'>
