@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const token = ""
+const token = process.env.ACCESS_TOKEN
 const base_url = process.env.BASE_URL;
 
 const endpoint = `${base_url}/auth/users/me`;

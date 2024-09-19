@@ -1,6 +1,7 @@
 export interface userData {
-    id_number: string;
-    email: string;
-    password: string;
-    re_password: string;
+    data:{
+        email: string;
+        id: string;
+        id_number: string;
+    }
 }
