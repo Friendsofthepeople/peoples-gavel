@@ -12,8 +12,34 @@ import { FaRegCircleUser } from "react-icons/fa6";
 import { FiSun, FiMoon } from "react-icons/fi";
 
 const TopNavbar = () => {
+    const [isOpen, setIsOpen] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
     const [theme, setTheme] = useState('default')
     const [menuOpen, setMenuOpen] = useState<boolean>(false)
+
+    const controlNavbar = useCallback(() => {
+        if (typeof window !== 'undefined') {
+            if (window.scrollY > lastScrollY) {
+                // if scroll down hide the navbar
+                setIsOpen(false);
+            } else {
+                setIsOpen(true);
+            }
+            // remember current page location to use in the next move
+            setLastScrollY(window.scrollY);
+        }
+    }, [lastScrollY]);
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            window.addEventListener('scroll', controlNavbar);
+
+            // cleanup function
+            return () => {
+                window.removeEventListener('scroll', controlNavbar);
+            };
+        }
+    }, [controlNavbar]);
 
 function toggleTheme(theme:string){
     setTheme(theme)
@@ -25,7 +51,7 @@ function toggleTheme(theme:string){
     }
 
     return (
-        <main className={`fixed w-full top-0 z-10 py-4 md:py-8 lg:py-4 px-4 px-8 bg-white`}>
+        <main className={`fixed w-full transition-transform duration-300 transform ${isOpen ? 'translate-y-0' : '-translate-y-full'} top-0 z-10 py-4 md:py-8 lg:py-4 px-4 px-8 bg-white`}>
             <nav className="flex flex-col lg:flex-row justify-between items-center w-full gap-4">
                 <div className='flex lg:flex-row justify-between items-center gap-16 w-full lg:w-auto' >
                     <a href='/'>
