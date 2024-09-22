@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 const base_url = process.env.BASE_URL;
 
 export async function POST(req: any) {
-  const endpoint = `${base_url}/auth/users/`;
+  const endpoint = `${base_url}/auth/jwt/create/`;
 
   try {
     const { id, email, password } = await req.json();
@@ -14,10 +14,9 @@ export async function POST(req: any) {
       },
 
       body: JSON.stringify({
-        id_number: id,
         email,
+        username: email,
         password,
-        re_password: password,
       }),
     });
 
