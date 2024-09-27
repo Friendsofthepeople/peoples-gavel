@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 function Footer() {
     return (
@@ -20,7 +21,9 @@ function Footer() {
                 </ul>
                     </div>
                     <div className=''>
+                        <Link href="/dashboard">
                     <button className='border-2 border-[#01C909] text-[#ffffff] bg-[#01C909] rounded-xl py-2 px-4 my-2 w-full' >Get Started now</button>
+                        </Link>
                     </div>
                 </div>
             </div>

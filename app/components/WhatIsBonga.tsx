@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 function WhatIsBonga() {
     return (
@@ -13,9 +14,10 @@ function WhatIsBonga() {
                         </div>
                         <p>Bonga is a unique and exciting platform designed to empower you to speak up and make a real impact on the issues that matter most to you. The name {'"'}Bonga{'"'} comes from the Swahili word meaning {'"'}speak up,{'"'} and that{"'"}s exactly what we want you to do here!</p>
                         <p>Whether it{"’"}s about new laws being debated, how public funds are being used, or any other issue affecting your community, Bonga gives you the tools to have your voice heard and make a difference.</p>
-                        <a className='border-2 border-[#01C909] text-[#01C909] bg-white rounded-xl mt-2 py-2 px-4 my-2' href='/auth/signup'>Get Started now</a>
-                        {/* <button className='border-2 border-[#01C909] text-[#01C909] bg-white rounded-xl py-2 px-4 my-2' >Get Started now</button> */}
-                    </div>
+                         <Link href="/dashboard">
+                        <button className='border-2 border-[#01C909] text-[#01C909] bg-white rounded-xl py-2 px-4 my-2' >Get Started now</button>
+                        </Link>
+                         </div>
 
                     <div className='relative w-full min-h-[400px] mt-4 lg:mt-4'>
                         <Image
@@ -54,8 +56,9 @@ function WhatIsBonga() {
                         <br></br>
                         <p>Whether it{"’"}s about new laws being debated, how public funds are being used, or any other issue affecting your community, Bonga gives you the tools to have your voice heard and make a difference.</p>
                     </div>
-
+<Link href="/dashboard">
                     <button className='border-2 border-[#01C909] text-[#01C909] bg-white rounded-xl py-2 px-4 my-2' >Get Started now</button>
+</Link>
                 </div>
             </main>
         </>
