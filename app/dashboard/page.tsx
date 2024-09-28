@@ -1,6 +1,6 @@
 "use client"
 
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import Link from 'next/link'
 import { TbLayoutDashboard } from "react-icons/tb";
 import { TbGavel } from "react-icons/tb";
@@ -8,6 +8,10 @@ import { LuHistory } from "react-icons/lu";
 import { MdOutlineChat } from "react-icons/md";
 import { MdOutlineCalendarMonth } from "react-icons/md";
 import { FaRegCircleUser } from "react-icons/fa6";
+import TopNavBar from './components/TopNavBar';
+import SideBar from './components/SideBar';
+import Issues from './views/Issues';
+import Law from './views/Law';
 
 interface userResponse {
   data: {
@@ -20,7 +24,8 @@ interface userResponse {
 function Page() {
   // const [user, setUser] = useState([]);
   // const [error, setError] = useState(null);
-
+  const [activeView, setActiveView] = useState<string | null>(null);
+  
   useEffect(() => {
     const fetchUser = async () => {
       try {
@@ -34,8 +39,21 @@ function Page() {
     fetchUser();
   }, []);
 
+  const handleSetActiveView = (viewName: string) => {
+    setActiveView(viewName)
+  }
 
   return (
+    <>
+    <TopNavBar />
+        <div className='flex items-start'>
+          <div className="sticky top-0 flex-start ">
+            <SideBar handleSetActiveView={handleSetActiveView}/>
+          </div>
+          <div className='flex-end w-full'>
+            {activeView == 'issues' ? <Issues /> :
+            activeView == 'law' ? <Law /> : (
+
     <div className='pt-[60px] lg:pt-[75px] px-2'>
       <div className='hidden lg:flex items-center gap-2 pt-4'>
         <button className='border-2 border-[#01C909] rounded-xl py-1 px-2 text-center'>
@@ -208,6 +226,12 @@ function Page() {
 
 
     </div>
+            )}
+
+          </div>
+        </div> 
+    </>
+        
   )
 }
 
