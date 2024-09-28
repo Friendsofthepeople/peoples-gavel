@@ -1,14 +1,21 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import { TbGavel, TbLayoutDashboard } from "react-icons/tb";
 import { LuHistory } from "react-icons/lu";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight, MdOutlineLogout, MdOutlineChat, MdOutlineCalendarMonth, } from "react-icons/md";
 
-function SideBar() {
+
+
+interface SideBarProps{
+  handleSetActiveView : (viewName: string) => void
+}
+
+const SideBar: FC<SideBarProps> = ({handleSetActiveView}) => {
   // State to keep track of the active button
   const [activeButton, setActiveButton] = useState<string | null>(null);
+  const [activeView, setActiveView] = useState<string | null>(null);
   const [expanded, setExpanded] = useState<boolean>(true)
 
   // Function to handle button click and update active state
@@ -17,8 +24,9 @@ function SideBar() {
   };
 
   // Function to handle button click and update active state
-  const handleButtonClick = (buttonName: string) => {
+  const handleButtonClick = (buttonName: string, viewName: string) => {
     setActiveButton(buttonName);
+    handleSetActiveView(viewName)
   };
 
   function MenuItem({ icon, label, isActive, onClick }: {
@@ -57,35 +65,35 @@ function SideBar() {
         <MenuItem
           icon={<TbLayoutDashboard size={20} />}
           label="Dashboard" isActive={activeButton === 'dashboard'}
-          onClick={() => handleButtonClick('dashboard')} />
+          onClick={() => handleButtonClick('dashboard', 'issues')} />
         <MenuItem
           icon={<TbGavel size={20} />}
           label="Law" isActive={activeButton === 'Law'}
-          onClick={() => handleButtonClick('Law')} />
+          onClick={() => handleButtonClick('Law', 'law')} />
         <MenuItem
           icon={<LuHistory size={20} />}
           label="History" isActive={activeButton === 'History'}
-          onClick={() => handleButtonClick('History')} />
+          onClick={() => handleButtonClick('History', 'history')} />
         <MenuItem
           icon={<MdOutlineChat size={20} />}
           label="Discussions" isActive={activeButton === 'Discussions'}
-          onClick={() => handleButtonClick('Discussions')} />
+          onClick={() => handleButtonClick('Discussions', 'discussions')} />
 
         <MenuItem
           icon={<MdOutlineCalendarMonth size={20} />}
           label="Calendar" isActive={activeButton === 'Calendar'}
-          onClick={() => handleButtonClick('Calendar')} />
+          onClick={() => handleButtonClick('Calendar', 'calender')} />
         <MenuItem
           icon={<FaRegCircleUser size={20} />}
           label="Profile" isActive={activeButton === 'Profile'}
-          onClick={() => handleButtonClick('Profile')} />
+          onClick={() => handleButtonClick('Profile', 'profile')} />
       </div>
 
       <div>
         <MenuItem
           icon={<MdOutlineLogout size={20} />}
           label="Logout" isActive={activeButton === 'Logout'}
-          onClick={() => handleButtonClick('Logout')} />
+          onClick={() => handleButtonClick('Logout', 'logout')} />
 
       </div>
 
