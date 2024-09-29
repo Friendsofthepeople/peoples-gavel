@@ -18,3 +18,11 @@ export interface issuesData {
     title: string;
 
 }
+export interface discussionsData {
+    author: string;
+    content: string;
+    created_at: string;
+    id: string;
+    title: string;
+
+}

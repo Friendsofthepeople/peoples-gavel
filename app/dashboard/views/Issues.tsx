@@ -37,7 +37,10 @@ function Issues() {
           <Link href="#">Explore discussions</Link>
         </button>
       </div>
+      
+      <p className='p-2 text-[22px] text-semibold'>Current Issues</p>
 
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-4">
       {issues &&
         issues.map((issue: issuesData) => {
           return (
@@ -76,6 +79,7 @@ function Issues() {
             </div>
           );
         })}
+        </div>
     </div>
   );
 }
