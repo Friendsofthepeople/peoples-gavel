@@ -12,6 +12,8 @@ import TopNavBar from './components/TopNavBar';
 import SideBar from './components/SideBar';
 import Issues from './views/Issues';
 import Law from './views/Law';
+import Discussions from './views/Discussions';
+import Profile from './views/Profile';
 
 interface userResponse {
   data: {
@@ -52,7 +54,9 @@ function Page() {
           </div>
           <div className='flex-end w-full'>
             {activeView == 'issues' ? <Issues /> :
-            activeView == 'law' ? <Law /> : (
+            activeView == 'law' ? <Law /> : 
+            activeView == 'profile' ? <Profile /> : 
+            activeView == 'discussions' ? <Discussions /> : (
 
     <div className='pt-[60px] lg:pt-[75px] px-2'>
       <div className='hidden lg:flex items-center gap-2 pt-4'>
