@@ -6,7 +6,7 @@ import { LuHistory } from "react-icons/lu";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight, MdOutlineLogout, MdOutlineChat, MdOutlineCalendarMonth, } from "react-icons/md";
 
-
+import { LiaUserSlashSolid } from "react-icons/lia";
 
 interface SideBarProps{
   handleSetActiveView : (viewName: string) => void
@@ -70,6 +70,10 @@ const SideBar: FC<SideBarProps> = ({handleSetActiveView}) => {
           icon={<TbGavel size={20} />}
           label="Law" isActive={activeButton === 'Law'}
           onClick={() => handleButtonClick('Law', 'law')} />
+        <MenuItem
+          icon={<LiaUserSlashSolid size={20} />}
+          label="Recall MP" isActive={activeButton === 'Recall'}
+          onClick={() => handleButtonClick('Recall', 'recall')} />
         <MenuItem
           icon={<LuHistory size={20} />}
           label="History" isActive={activeButton === 'History'}

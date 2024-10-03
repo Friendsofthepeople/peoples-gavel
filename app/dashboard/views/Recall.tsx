@@ -2,19 +2,7 @@
 
 import React, {useEffect, useState} from 'react'
 import Link from 'next/link'
-import { TbLayoutDashboard } from "react-icons/tb";
-import { TbGavel } from "react-icons/tb";
-import { LuHistory } from "react-icons/lu";
-import { MdOutlineChat } from "react-icons/md";
-import { MdOutlineCalendarMonth } from "react-icons/md";
-import { FaRegCircleUser } from "react-icons/fa6";
-import TopNavBar from './components/TopNavBar';
-import SideBar from './components/SideBar';
-import Issues from './views/Issues';
-import Law from './views/Law';
-import Discussions from './views/Discussions';
-import Profile from './views/Profile';
-import Recall from './views/Recall';
+import { useRouter } from 'next/navigation';
 
 interface userResponse {
   data: {
@@ -24,10 +12,17 @@ interface userResponse {
 }
 }
 
-function Page() {
-  // const [user, setUser] = useState([]);
-  // const [error, setError] = useState(null);
+function Recall() {
   const [activeView, setActiveView] = useState<string | null>(null);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [id, setId] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  const [recallFormOpen, setRecallFormOpen] = useState<boolean>(false)
+
+  const router = useRouter();
   
   useEffect(() => {
     const fetchUser = async () => {
@@ -46,27 +41,101 @@ function Page() {
     setActiveView(viewName)
   }
 
+  const handleOpenRecallForm = () =>{
+    setRecallFormOpen(!recallFormOpen)
+  }
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+
+    const res = await fetch("/api/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id, email, password }),
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      setSuccess("Signup successful!");
+      setError("");
+      router.push("/dashboard");
+    } else {
+      setError(data.message);
+      setSuccess("");
+    }
+  };
+
+//   recall form component
+const RecallForm = () =>{
+    return (
+        <div className='bg-white max-w-[500px] rounded-xl p-2'>
+            <label>Recall your Member of Parliament (MP)</label>
+            <form onSubmit={handleSubmit}>
+          <div className="flex flex-col my-4">
+            <label>Your Email Address</label>
+            <input
+              id="name"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="py-2 px-2  rounded-xl"
+              placeholder="Enter your email Address"
+            ></input>
+          </div>
+
+          <div className="flex flex-col my-4">
+            <label>Identification card number</label>
+            <input
+              id="id"
+              type="text"
+              value={id}
+              onChange={(e) => setId(e.target.value)}
+              className="py-2 px-2  rounded-xl"
+              placeholder="Enter your 8 digit ID number"
+            ></input>
+          </div>
+
+          <div className="flex flex-col my-4">
+            <label>Password</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="py-2 px-2  rounded-xl"
+              placeholder="use a combination of letter, digits and symbols"
+            ></input>
+          </div>
+
+          <div>
+            <input
+              type="submit"
+              className="border-2 border-[#01C909] text-[#ffffff] bg-[#01C909] rounded-xl py-2 px-4 my-2 w-full cursor-pointer"
+              value="Get Started now"
+            ></input>
+          </div>
+        </form>
+        </div>
+    )
+}
+
   return (
     <>
-    <TopNavBar />
         <div className='flex items-start'>
-          <div className="sticky top-0 flex-start ">
-            <SideBar handleSetActiveView={handleSetActiveView}/>
-          </div>
+        
           <div className='flex-end w-full'>
-            {activeView == 'issues' ? <Issues /> :
-            activeView == 'law' ? <Law /> : 
-            activeView == 'profile' ? <Profile /> : 
-            activeView == 'discussions' ? <Discussions /> :
-            activeView == 'recall' ? <Recall /> : (
+           
 
     <div className='pt-[60px] lg:pt-[75px] px-2'>
       <div className='hidden lg:flex items-center gap-2 pt-4'>
-        <button className='border-2 border-[#01C909] rounded-xl py-1 px-2 text-center'>
-          <Link href="#">Vote Now</Link>
+        <button 
+        onClick={handleOpenRecallForm}
+        className='border-2 border-[#01C909] rounded-xl py-1 px-2 text-center'>
+          <Link href="#">Start a recall</Link>
         </button>
         <button className='border-2 border-[#01C909] rounded-xl py-1 px-2 text-center'>
-          <Link href="#">View new laws</Link>
+          <Link href="#">View new recalls</Link>
         </button>
         <button className='border-2 border-[#01C909] rounded-xl py-1 px-2 text-center'>
           <Link href="#">Explore discussions</Link>
@@ -74,7 +143,10 @@ function Page() {
       </div>
 
       <div>
-      <p className='p-2 text-[22px] text-semibold'>Current Issues</p>
+      <p className='p-2 text-[22px] text-semibold'>Popular recalls</p>
+      {recallFormOpen ? 
+      <RecallForm />
+      : ''}
 
       <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
         <div className='bg-[#f8f9fb] rounded-xl p-2 '>
@@ -232,7 +304,6 @@ function Page() {
 
 
     </div>
-            )}
 
           </div>
         </div> 
@@ -241,4 +312,4 @@ function Page() {
   )
 }
 
-export default Page
+export default Recall
