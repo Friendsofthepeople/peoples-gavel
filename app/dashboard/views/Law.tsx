@@ -14,9 +14,6 @@ function Law() {
   
       const res = await fetch("/api/issues", {
         method: "GET",
-        // headers: {
-        //   "Content-Type": "application/json",
-        // },
       });
   
       const data = await res.json();
@@ -25,7 +22,6 @@ function Law() {
       if (res.ok) {
         setSuccess("issues successful!");
         setError("");
-        // router.push("/dashboard");
       } else {
         setError(data.message);
         setSuccess("");
