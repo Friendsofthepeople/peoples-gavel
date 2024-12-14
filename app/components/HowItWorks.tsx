@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 function HowItWorks() {
     return (
-        <main className='mt-4 items-center'>
+        <main className='mt-4 items-center' id='working'>
             <p className='mt-4 text-center font-semibold'>How it Works</p>
             <div className='grid grid-cols-1 md:grid-cols-3 md:px-6 lg:px-28 gap-4 items-center'>
                 <div className='m-2 p-2 border border-2 rounded-2xl'>

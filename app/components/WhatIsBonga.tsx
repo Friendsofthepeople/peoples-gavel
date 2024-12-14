@@ -5,7 +5,7 @@ import Link from 'next/link'
 function WhatIsBonga() {
     return (
         <>
-            <main className='mt-4 items-center text-white bg-[#01C909] p-4 '>
+            <main className='mt-4 items-center text-white bg-[#01C909] p-4' id='about'>
                 <div className='hidden lg:grid lg:grid-cols-2 lg:px-6 lg:px-28 gap-4 items-center'>
                     <div>
                         <div className="py-4 mb-4 " >
