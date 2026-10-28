@@ -31,9 +31,9 @@ const Navbar = () => {
                 </div>
 
                 <ul className="hidden lg:flex flex-col lg:flex-row  justify-center items-center gap-4">
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>How it works</li>
+                    <Link href="#" className="pointer">Home</Link>
+                    <Link href="#about" className="pointer">About</Link>
+                    <Link href="#working" className="pointer">How it works</Link>
                 </ul>
                 <div className="hidden lg:flex flex-col lg:flex-row justify-center items-center gap-4">
                     <Link href="/auth/signup">
@@ -41,15 +41,17 @@ const Navbar = () => {
                             Sign up
                         </button>
                     </Link>
-                    <button className='border-2 border-[#01C909] bg-[#01C909] py-1 px-4 text-white rounded-xl'>Login</button>
+                    <Link href="/auth/login">
+                            <button className='border-2 border-[#01C909] bg-[#01C909] py-1 px-4 text-white rounded-xl'>Login</button>
+                    </Link>
                 </div>
 
                 {/* for small screen */}
                 <div className={`lg:hidden ${menuOpen ? 'block' : 'hidden'}`}>
                     <ul className="flex flex-col lg:flex-row  justify-center items-center gap-4">
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>How it works</li>
+                        <Link href="#home" className="pointer">Home</Link>
+                        <Link href="#about" className="pointer">About</Link>
+                        <Link href="#working" className="pointer">How it works</Link>
                     </ul>
                     <div className="flex flex-col lg:flex-row justify-center items-center gap-4 mt-4">
                         <Link href="/auth/signup">
